@@ -90,13 +90,25 @@ namespace Codes_FIAP_Aula5
 
 
 
+            #region Exibindo todos os elementos de uma lista com apenas uma linha de código
+            /*
+             
+            List<int> listaTeste = new List<int>();
+            listaTeste = Enumerable.Range(10, 20).ToList();
+            Console.WriteLine($"{string.Join(", ", listaTeste)}"); // Plota do 10 até o 29
+
+            */
+            #endregion
+
+
+
             #region Maneiras de declarar uma matriz
             /*
             
-            // Declarando uma matriz de 6 elementos(3x2):
+            // Declarando uma matriz de 6 elementos(3 linhas x 2 colunas):
             int[,] matrizNumeros = new int[3, 2];
 
-            // Declarando a matrix e atribuindo valores nas declarações:
+            // Declarando a matriz e atribuindo valores nas declarações:
             int[,] matrizNumeros2 = new int[3, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 } };
 
             // Declarando a matrix, deixando o tamanho por conta da declaração, que no caso abaixo é 2x2:
@@ -133,7 +145,7 @@ namespace Codes_FIAP_Aula5
             #endregion
 
             #region Desafio com matriz
-            
+
             int[,] matrizNumeros = new int[4, 4]
             {
                 { 1, 2, 3, 4 }, // Somar
@@ -154,9 +166,16 @@ namespace Codes_FIAP_Aula5
                 Console.WriteLine($"Matriz[2,{i}] * Matriz[3,{i}] = {produtoColunas}");
             }
 
-            Console.ReadKey();
+            #endregion
+
+            #region Somando os elementos da diagonal principal da matriz
+
+            int somaDiagonalPrincipal = Enumerable.Range(0, 4).Sum(i => matrizNumeros[i, i]);
+            Console.WriteLine($"Soma da diagonal principal: {somaDiagonalPrincipal}");
 
             #endregion
+
+            Console.ReadKey();
 
         }
     }
